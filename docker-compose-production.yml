@@ -1,0 +1,33 @@
+version: "3.6"
+services:
+  web:
+    container_name: nexus_assess_backend_web
+    tty: true
+    stdin_open: true
+    build:
+      context: .
+    restart: always
+    volumes:
+      - .:/web
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+
+  redis:
+    container_name: nexus_assess_backend_redis
+    image: redis:alpine
+
+  celery:
+    container_name: nexus_assess_backend_celery
+    depends_on:
+      - web
+      - redis
+    build:
+      context: .
+    restart: always
+    volumes:
+      - .:/web
+    env_file:
+      - .env
+    command: bash -c "celery -A nexus_assess_backend worker --beat --loglevel=info"

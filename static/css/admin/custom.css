@@ -1,0 +1,36 @@
+.cca_questionnaire .flex-container.checkbox-row input,
+.cca_questionnaire .flex-container.fieldBox input {
+    align-self: baseline;
+    margin-top: 7px;
+}
+
+.cca_status .vCheckboxLabel {
+    margin-top: 7px;
+}
+
+label ul {
+    margin-left: 1.5rem!important;
+}
+
+form .aligned ul li {
+    list-style: disc;
+}
+
+p, li, label {
+    font-size: 0.875rem !important;
+}
+
+.module.aligned.summary-fields label {
+    min-width: auto;
+}
+
+
+.cca_questionnaire label {
+    width: auto;
+}
+
+.null-boolean-select {
+    order: -1;
+    margin-right: 10px;
+    margin-top: 5px;
+}

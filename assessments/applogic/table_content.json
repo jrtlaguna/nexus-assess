@@ -1,0 +1,182 @@
+{
+  "gxp_impact": [
+    {
+      "index": "1",
+      "criteria": [
+        "\u2022 Product Quality Control\n\u2022 Used to monitor, control, or supervise:\n",
+        "\n            \u25e6 Used to monitor, control, or supervise",
+        "\n            \u25e6 Packaging and labeling operations",
+        "\n            \u25e6 Production processes and/or materials",
+        "\n            \u25e6 GMP facilities/environments or services",
+        "\n            \u25e6 Commercial manufacturing materials or intermediates supply chain\n",
+        "\n        \u2022 As a process control Solution that may control or manipulate the process in such a way to affect drug product quality without independent verification of the control Solution performance? (PLCs, DCS, loop controllers, etc.)\n"
+      ],
+      "key": "is_solution_used_for_product_quality_control"
+    },
+    {
+      "index": "2",
+      "criteria": [
+        "Is the data from the solution recorded as part of the batch record or lot release and/or directly impacts the ability to recall drug product?"
+      ],
+      "key": "is_solution_part_of_batch_record"
+    },
+    {
+      "index": "3",
+      "criteria": [
+        "Is this solution impacted by any GMP global regulations that require a company to maintain certain records and submit specific information to the agency as part of compliance (predicate rules)?"
+      ],
+      "key": "is_impacted_by_gmp_global_regulations"
+    },
+    {
+      "text": "Good Clinical Practices (GCP) Impact",
+      "is_header": true
+    },
+    {
+      "index": "4",
+      "criteria": [
+        "Is this solution impacted by any GCP global regulations that require a company to maintain certain records and submit specific information to the agency as part of compliance (predicate rules)?\n\nRecord the regulation(s) in Comments."
+      ],
+      "key": "is_impacted_by_gcp_global_regulations"
+    },
+    {
+      "index": "5",
+      "criteria": [
+        "Is the solution used for any of the following:\n\n\t\u2022 Used to design, conduct, perform, monitor, audit, record, analyze, and report information from a clinical or animal study?\n\t\u2022 Used to discover or verify the clinical, pharmacological and/or other pharmacodynamic effects of an investigational product(s), and/or to identify any adverse reactions to an investigational product(s), and/or to study absorption, distribution, metabolism, and excretion of an investigational product(s) with the object of ascertaining its safety and/or efficacy?\n"
+      ],
+      "key": "is_solution_used_to_design_discover_products"
+    },
+    {
+      "text": "Good Laboratory Practices (GLP) Impact",
+      "is_header": true
+    },
+    {
+      "index": "6",
+      "criteria": [
+        "Is this solution impacted by any GLP global regulations that require a company to maintain certain records and submit specific information to the agency as part of compliance (predicate rules)?\n\nRecord the regulation(s) in Comments"
+      ],
+      "key": "is_impacted_by_glp_global_regulations"
+    },
+    {
+      "index": "7",
+      "criteria": [
+        "Is the solution used for any of the following:\n\n\t \u2022 Used to collect, store, process or transmit patient or data subject original documents, data, and records? \n\n\t \u2022 Used to plan, perform, monitor, record, archive and report non-clinical health and safety data within a laboratory condition/ environment to obtain data on its properties or safety?\n\n"
+      ],
+      "key": "is_solution_used_to_collect_and_process_data"
+    },
+    {
+      "index": "8",
+      "criteria": [
+        "Solution is used to design, conduct, perform, monitor, audit, record, analyze, and report information from a clinical or post-marketing commitment?"
+      ],
+      "key": "is_solution_used_for_post_marketing_commitment"
+    },
+    {
+      "index": "9",
+      "criteria": [
+        "Solution is used to monitor, audit, record, analyze, and report source data (e.g., letters, emails, records of telephone calls, which include details of an event)?"
+      ],
+      "key": "is_solution_used_to_monitor_and_report_source_data"
+    },
+    {
+      "index": "10",
+      "criteria": [
+        "Solution is an externally facing tool (e.g., web sites/digital media site or platform) that could have the potential to generate AE data?"
+      ],
+      "key": "is_solution_externally_facing_tool"
+    },
+    {
+      "is_header": true,
+      "text": "GxP Indirect Impact"
+    },
+    {
+      "index": "11",
+      "criteria": [
+        "Is the Solution used to create, process, store, hold, manipulate, report data used to make quality related decisions (e.g., Product Reviews, Training Records, Complaints Records, etc.)?"
+      ],
+      "key": "is_solution_used_to_make_quality_related_decisions"
+    },
+    {
+      "index": "12",
+      "criteria": [
+        "Is the Solution used to provide support to GxP processes and/or systems?"
+      ],
+      "key": "is_solution_used_to_support_gxp_processes"
+    }
+  ],
+  "gxp_eres": [
+    {
+      "index": "1",
+      "criteria": [
+        "Does the system create, modify, maintain, archive, retrieve, or transmit records in electronic form that are required by any MD or GxP regulation or that are otherwise submitted to the External Health Authorities (i.e., FDA, EU, etc.)?"
+      ],
+      "key": "does_solution_create_records_in_electronic_form_required_by_gxp_regulation"
+    },
+    {
+      "index": "2",
+      "criteria": [
+        "Does the system employ electronic signatures that are considered the equivalent to handwritten signatures executed on paper?"
+      ],
+      "key": "does_solution_employ_electorinic_signatures"
+    }
+  ],
+  "sox_impact": [
+    {
+      "index": "1",
+      "criteria": [
+        "Is this a Solution used for the generation, maintenance, storage or importation of material financial data or financial reports utilized in the financial reporting process?"
+      ],
+      "key": "is_solution_used_for_material_financial_data"
+    },
+    {
+      "index": "2",
+      "criteria": [
+        "Does the solution provide access control for financial systems and integration with other systems?"
+      ],
+      "key": "does_solution_provide_access_control_for_financial_systems"
+    },
+    {
+      "index": "3",
+      "criteria": [
+        "Does the system feed information, or is it fed information from another in-scope SOX system?"
+      ],
+      "key": "does_system_feed_information_to_from_sox_system"
+    }
+  ],
+  "classifications": [
+    {
+      "title": "SECRET",
+      "paragraphs": [
+        "\u2022  Highly sensitive data intended for limited, specific use by a workgroup, department, or group of individuals with a legitimate need-to-know.",
+        "\u2022  Explicit authorization by the Data Steward is required for access because of legal, contractual, privacy, or other constraints.  The Company is contractually obligated to keep them secret.",
+        "\u2022  They are critical to the Company's ability to perform one of its essential business functions and cannot be replaced easily with backup copies.",
+        "\u2022  Leakage of this information can cause substantial damage to Company."
+      ],
+      "key": "data_classification_secret"
+    },
+    {
+      "title": "RESTRICTED",
+      "paragraphs": [
+        "\u2022  Data that must be protected from unauthorized access to safeguard the privacy or security of an individual or organization.",
+        "\u2022  Not available to the public, and protection is required by the data owner or other confidentiality and may be required by federal or state law or regulation.",
+        "\u2022  The loss of their confidentiality, integrity, or availability could cause harm to Company but not as severe as with Secret Data.",
+        "\u2022  They identify an individual and would customarily be shared only with the individual's family, doctor, lawyer, or accountant.",
+        "\u2022  Disclosure is limited to individuals on a need-to-know basis. They could be exploited for criminal or other wrongful purposes, and the Company is obligated by federal or state law or regulation to keep them confidential."
+      ],
+      "key": "data_classification_restricted"
+    },
+    {
+      "title": "INTERNAL",
+      "paragraphs": [
+        "\u2022  Information that must be guarded due to proprietary, ethical, or privacy considerations and must be protected from unauthorized access, modification, transmission, storage or other use. This classification applies even though there may not be a civil statute requiring this protection. Internal Data is information that is restricted to personnel who have a legitimate reason to access it."
+      ],
+      "key": "data_classification_internal"
+    },
+    {
+      "title": "PUBLIC",
+      "paragraphs": [
+        "Information that may or must be open to the general public. It is defined as information with no existing local, national, or international legal restrictions on access or usage. Public data, while subject to disclosure rules, is available to all employees and all individuals or entities external to the corporation."
+      ],
+      "key": "data_classification_public"
+    }
+  ]
+}

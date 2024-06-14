@@ -1,0 +1,14 @@
+{% extends "core/email/base.html" %}
+
+{% block content %}
+<span class="text">Hi{% if user.first_name %}{% endif %},</span><br /><br />
+<span class="text">The CCA export is now available for download. Please click the link below to download:</span><br /><br/>
+
+<span class="link">
+  <a href="{{url}}">CCA Export</a>
+</span><br/><br/>
+
+<span class="text">Thank you for choosing our services. Should you require further assistance, please do not hesitate to contact us!</span><br /><br />
+<span class="text">Best Regards,</span><br />
+<span class="text">Nexus Group LLC</span>
+{% endblock content %}

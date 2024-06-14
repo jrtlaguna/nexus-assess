@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Lato', sans-serif!important;
+    }
+
+    .container {
+      width: 100%;
+      text-align: center;
+    }
+
+    .email-container {
+      min-width: 320px;
+      max-width: 700px;
+      min-height: 250px;
+      position: relative;
+      background: #F9FBFD;
+      box-shadow: 0px 4px 12px rgba(193.59, 205.67, 214.41, 0.20);
+      border-radius: 2px;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    .logo {
+      width: 145px;
+      height: 64px;
+    }
+
+    .top_lineart {
+        width: 100%;
+        height: 70px;
+    }
+
+    .top_lineart img {
+        width: 100%;
+        height: 170px;
+    }
+
+    .bottom_lineart {
+        width: 100%;
+        height: 100px;
+        padding-bottom: 100px;
+    }
+
+    .bottom_lineart img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .title {
+      height: 93.41px;
+      text-align: center;
+      color: #333333;
+      font-size: 30px;
+      font-family: 'Lato';
+      font-weight: 700;
+      line-height: 45px;
+      word-wrap: break-word;
+      margin: 20px auto;
+    }
+
+    .content {
+      min-height: 200px;
+      text-align: left;
+      padding: 0 30px;
+    }
+
+    .text {
+      color: #474747;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      word-wrap: break-word;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .link {
+      color: #0958F5;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      word-wrap: break-word;
+      text-decoration: underline;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-left: -8px;
+      }
+
+      th, td {
+        padding: 8px;
+        text-align: left;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      /* Apply styles for screens larger than 600px */
+      @media (min-width: 600px) {
+        th, td {
+          display: table-cell;
+        }
+
+        th {
+            width: 40%;
+        }
+        td {
+            width: 60%;
+        }
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="email-container">
+      <div class="top_lineart">
+        <img src="{{ top_line_art_url }}"/>
+      </div>
+
+      <img class="logo" src="{{ logo }}">
+      <div class="title">{% block title %}{{title}}{% endblock title %}</div>
+      <div class="content">
+        {% block content %}{% endblock content %}
+      </div>
+      <div class="bottom_lineart">
+        <img src="{{ bottom_line_art_url }}"/>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

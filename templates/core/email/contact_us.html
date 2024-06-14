@@ -1,0 +1,30 @@
+{% extends "core/email/base.html" %}
+
+{% block content %}
+
+<span class="text">Hi Admin,</span><br><br>
+<span class="text">A new Contact Us Submission has been received with the following information:</span><br><br>
+
+<table>
+  <tr>
+    <th class="text">Date and Time Submitted:</th>
+    <td class="text bold">{{ date_submitted }}</td>
+  </tr>
+  <tr>
+    <th class="text">Full Name:</th>
+    <td class="text bold">{{ name }}</td>
+  </tr>
+  <tr>
+      <th class="text">Email:</th>
+      <td class="text bold">{{ email }}</td>
+  </tr>
+  <tr>
+      <th class="text">Subject (optional):</th>
+      <td class="text bold">{{ subject }}</td>
+  </tr>
+  <tr>
+      <th class="text">Message:</th>
+      <td class="text bold">{{ message }}</td>
+  </tr>
+</table>
+{% endblock content %}

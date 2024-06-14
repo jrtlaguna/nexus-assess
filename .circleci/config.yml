@@ -1,0 +1,91 @@
+version: 2.1
+# Define the jobs we want to run for this project
+jobs:
+  build-and-test:
+    working_directory: ~/nexus_assess_backend
+    docker:
+      - image: python:3.11
+        environment:
+          SECRET_KEY: Thi$IsMyT3$t$3cr3tK3y
+      - image: postgres:14
+        environment:
+          POSTGRES_USER: nexus_assess_backend
+          POSTGRES_DB: nexus_assess_backend
+          POSTGRES_PASSWORD: nexus_assess_backend
+
+    steps:
+      - checkout
+      # NOTE: This will improve test performance but sometimes causes error if packages are removed. This need more test
+      # - restore_cache:
+      #     keys:
+      #       - be-dependencies-\{\{ checksum "poetry.lock" \}\}
+      #       - be-dependencies-
+
+      - run:
+          name: Installing BE Requirements
+          command: |
+            cp .env.example .env
+            curl -sSL https://install.python-poetry.org | python3 -
+            POETRY_VIRTUALENVS_CREATE=false /root/.local/bin/poetry install
+
+      # NOTE: Dependent on the above commented code.
+      # - save_cache:
+      #     paths:
+      #       - "~/.cache/pypoetry/virtualenvs/*/lib/python3.11/site-packages"
+      #     key: be-dependencies-\{\{ checksum "poetry.lock" \}\}
+
+      # - run:
+      #     name: Running BE Test
+      #     command: |
+      #       python manage.py migrate
+      #       pytest
+
+  update-backend-staging:
+    docker:
+      - image: arvindr226/alpine-ssh
+    steps:
+      # Path specified below will depend where the project folder is saved in the server.
+      - run: ssh -oStrictHostKeyChecking=no -v $STAGINGUSER@$STAGINGIP "
+          sudo chown ubuntu:ubuntu -R /home/ubuntu/app/nexus-assess-backend &&
+          sudo -u ubuntu bash -c '
+          cd /home/ubuntu/app/nexus-assess-backend &&
+          git checkout develop && git pull && sudo docker compose down &&
+          sudo docker system prune -a &&
+          sudo docker compose up --build -d &&
+          sudo docker exec nexus_assess_backend_web python manage.py migrate &&
+          sudo docker exec nexus_assess_backend_web python manage.py collectstatic --no-input &&
+          sudo cp -R /home/ubuntu/app/nexus-assess-backend/staticfiles /var/www/assets' &&
+          sudo chown ubuntu:ubuntu -R /var/www/assets/staticfiles"
+
+  update-backend-production:
+    docker:
+      - image: arvindr226/alpine-ssh
+    steps:
+      # Path specified below will depend where the project folder is saved in the server.
+      - run: ssh -oStrictHostKeyChecking=no -v $PRODUSER@$PRODIP "
+          sudo chown ubuntu:ubuntu -R /home/ubuntu/app/nexus-assess-backend &&
+          sudo -u ubuntu bash -c '
+          cd /home/ubuntu/app/nexus-assess-backend &&
+          git checkout develop && git pull && sudo docker compose down &&
+          sudo docker system prune -a &&
+          sudo docker compose up --build -d &&
+          sudo docker exec nexus_assess_backend_web python manage.py migrate &&
+          sudo docker exec nexus_assess_backend_web python manage.py collectstatic --no-input &&
+          sudo cp -R /home/ubuntu/app/nexus-assess-backend/staticfiles /var/www/assets' &&
+          sudo chown ubuntu:ubuntu -R /var/www/assets/staticfiles"
+
+# Main circleci config for Job flow.
+workflows:
+  version: 2
+  build-project:
+    jobs:
+      - update-backend-staging:
+          filters:
+            branches:
+              only:
+                - develop
+      - update-backend-production:
+          filters:
+            branches:
+              only:
+                - main

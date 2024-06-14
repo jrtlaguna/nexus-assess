@@ -1,0 +1,217 @@
+[
+{
+  "model": "requirements.compliance",
+  "pk": 1,
+  "fields": {
+    "name": "GMP-Direct",
+    "category": 1,
+    "header_name": "gmp-direct",
+    "reference_policies": [
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 2,
+  "fields": {
+    "name": "GMP-Indirect",
+    "category": 1,
+    "header_name": "gmp-indirect",
+    "reference_policies": [
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 3,
+  "fields": {
+    "name": "GLP/ GCP",
+    "category": 1,
+    "header_name": "glp__gcp",
+    "reference_policies": [
+      6,
+      7
+    ]
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 4,
+  "fields": {
+    "name": "GPVP",
+    "category": 1,
+    "header_name": "gpvp",
+    "reference_policies": []
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 5,
+  "fields": {
+    "name": "Non-GxP",
+    "category": 1,
+    "header_name": "non-gxp",
+    "reference_policies": []
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 6,
+  "fields": {
+    "name": "SOX",
+    "category": 1,
+    "header_name": "sox",
+    "reference_policies": [
+      17
+    ]
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 7,
+  "fields": {
+    "name": "Transparency",
+    "category": 1,
+    "header_name": "transparency",
+    "reference_policies": []
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 8,
+  "fields": {
+    "name": "High Privacy",
+    "category": 1,
+    "header_name": "high_privacy",
+    "reference_policies": [
+      12,
+      13,
+      14,
+      15,
+      16
+    ]
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 9,
+  "fields": {
+    "name": "Medium Privacy",
+    "category": 1,
+    "header_name": "medium_privacy",
+    "reference_policies": [
+      12,
+      13,
+      14,
+      15,
+      16
+    ]
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 10,
+  "fields": {
+    "name": "Low Privacy",
+    "category": 1,
+    "header_name": "low_privacy",
+    "reference_policies": []
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 11,
+  "fields": {
+    "name": "Critical",
+    "category": 2,
+    "header_name": "critical",
+    "reference_policies": [
+      3
+    ]
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 12,
+  "fields": {
+    "name": "Major",
+    "category": 2,
+    "header_name": "major",
+    "reference_policies": [
+      3
+    ]
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 13,
+  "fields": {
+    "name": "Minor",
+    "category": 2,
+    "header_name": "minor",
+    "reference_policies": [
+      3
+    ]
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 14,
+  "fields": {
+    "name": "Impact",
+    "category": 3,
+    "header_name": "impact",
+    "reference_policies": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 15,
+  "fields": {
+    "name": "No Impact",
+    "category": 3,
+    "header_name": "no_impact",
+    "reference_policies": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 16,
+  "fields": {
+    "name": "Significant",
+    "category": 4,
+    "header_name": "significant",
+    "reference_policies": []
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 17,
+  "fields": {
+    "name": "Moderate",
+    "category": 4,
+    "header_name": "moderate",
+    "reference_policies": []
+  }
+},
+{
+  "model": "requirements.compliance",
+  "pk": 18,
+  "fields": {
+    "name": "Minimal",
+    "category": 4,
+    "header_name": "minimal",
+    "reference_policies": []
+  }
+}
+]
